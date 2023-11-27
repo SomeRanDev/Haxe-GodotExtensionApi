@@ -191,7 +191,7 @@ typedef Class = {
 	// https://github.com/godotengine/godot/blob/93cdacbb0a30f12b2f3f5e8e06b90149deeb554b/core/extension/extension_api_dump.cpp#L956C16-L956C16
 	enums: MaybeArray<{
 		name: String,
-		is_bitfield: Int,
+		is_bitfield: Bool,
 		values: Array<{
 			name: String,
 			value: Int,
