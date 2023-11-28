@@ -148,7 +148,7 @@ typedef BuiltinClass = {
 		name: String,
 		values: MaybeArray<{
 			name: String,
-			value: String,
+			value: Int,
 			description: Null<String>
 		}>,
 		description: Null<String>
