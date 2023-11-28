@@ -95,6 +95,20 @@ typedef GlobalEnum = {
 }
 
 /**
+	This is a structure that is compatible with all enums.
+	Builtin class enums do not contain `is_bitfield`.
+**/
+typedef AnyEnum = {
+	name: String,
+	description: Null<String>,
+	values: Array<{
+		name: String,
+		value: Int,
+		description: Null<String>
+	}>
+}
+
+/**
 	https://github.com/godotengine/godot/blob/93cdacbb0a30f12b2f3f5e8e06b90149deeb554b/core/extension/extension_api_dump.cpp#L561C8-L561C8
 **/
 typedef UtilityFunction = {
@@ -128,6 +142,8 @@ typedef BuiltinClass = {
 		value: String,
 		description: Null<String>
 	}>,
+
+	// Almost the same as `GlobalEnum`, but does not contain `is_bitfield`.
 	enums: MaybeArray<{
 		name: String,
 		values: MaybeArray<{
@@ -137,6 +153,7 @@ typedef BuiltinClass = {
 		}>,
 		description: Null<String>
 	}>,
+
 	operators: MaybeArray<{
 		name: String,
 		right_type: Null<String>,
@@ -189,16 +206,8 @@ typedef Class = {
 	}>,
 
 	// https://github.com/godotengine/godot/blob/93cdacbb0a30f12b2f3f5e8e06b90149deeb554b/core/extension/extension_api_dump.cpp#L956C16-L956C16
-	enums: MaybeArray<{
-		name: String,
-		is_bitfield: Bool,
-		values: Array<{
-			name: String,
-			value: Int,
-			description: Null<String>
-		}>,
-		description: Null<String>
-	}>,
+	// This is the same as GlobalEnum at the moment.
+	enums: MaybeArray<GlobalEnum>,
 
 	// https://github.com/godotengine/godot/blob/93cdacbb0a30f12b2f3f5e8e06b90149deeb554b/core/extension/extension_api_dump.cpp#L1006C9-L1006C9
 	methods: MaybeArray<{
