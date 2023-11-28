@@ -101,7 +101,7 @@ typedef GlobalEnum = {
 typedef AnyEnum = {
 	name: String,
 	description: Null<String>,
-	values: Array<{
+	values: MaybeArray<{
 		name: String,
 		value: Int,
 		description: Null<String>
