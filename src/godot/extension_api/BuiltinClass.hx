@@ -7,7 +7,7 @@ import godot.ExtensionApi.MaybeArray;
 **/
 typedef BuiltinClass = {
 	name: String,
-	indexing_return_type: Null<Int>,
+	indexing_return_type: Null<String>,
 	is_keyed: Bool,
 	members: MaybeArray<BuiltinClassMember>,
 	constants: MaybeArray<BuiltinClassConstant>,
