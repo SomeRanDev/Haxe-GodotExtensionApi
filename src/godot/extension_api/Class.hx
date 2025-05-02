@@ -47,15 +47,7 @@ typedef ClassMethod = {
 	// https://github.com/godotengine/godot/blob/93cdacbb0a30f12b2f3f5e8e06b90149deeb554b/core/extension/extension_api_dump.cpp#L1082C8-L1082C8
 	hash_compatibility: Array<Dynamic>,
 
-	arguments: MaybeArray<{
-		name: String,
-		type: String,
-		meta: Null<String>,
-
-		// only appears when not virtual
-		// https://github.com/godotengine/godot/blob/93cdacbb0a30f12b2f3f5e8e06b90149deeb554b/core/extension/extension_api_dump.cpp#L1103C18-L1103C18
-		default_value: Null<String>
-	}>,
+	arguments: MaybeArray<ClassMethodArgument>,
 	return_value: Null<{
 		// impossible to get "name" field
 		type: String,
@@ -63,6 +55,19 @@ typedef ClassMethod = {
 	}>,
 	description: Null<String>
 }
+
+/**
+	https://github.com/godotengine/godot/blob/93cdacbb0a30f12b2f3f5e8e06b90149deeb554b/core/extension/extension_api_dump.cpp#L1015
+**/
+typedef ClassMethodArgument = {
+	name: String,
+	type: String,
+	meta: Null<String>,
+
+	// only appears when not virtual
+	// https://github.com/godotengine/godot/blob/93cdacbb0a30f12b2f3f5e8e06b90149deeb554b/core/extension/extension_api_dump.cpp#L1103C18-L1103C18
+	default_value: Null<String>
+};
 
 /**
 	https://github.com/godotengine/godot/blob/93cdacbb0a30f12b2f3f5e8e06b90149deeb554b/core/extension/extension_api_dump.cpp#L1142C13-L1142C13
