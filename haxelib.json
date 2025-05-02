@@ -12,6 +12,6 @@
 		"typedef"
 	],
 	"classPath": "src/",
-	"releasenote": "Fixed typing of BuiltinClass.indexing_return_type.",
+	"releasenote": "Extracted out ClassMethodArgument structure.",
 	"contributors": ["SomeRanDev"]
 }
